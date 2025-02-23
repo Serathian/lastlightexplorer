@@ -1,13 +1,40 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planetary Explorer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+    <div id="app" class="container mx-auto" >
+      <div class="flex flex-col items-center gap-5 max-w-96 my-8 mx-auto min-h-dvh">
+        <div class="flex flex-col items-center gap-2">        
+          <h1 class="text-3xl text-primary font-bold">Last Light</h1>
+          <h2 class="font-bold">Planetary Explorer</h2>
+        </div>
+
+        <div id="explore" class="flex flex-col gap-5 w-full">
+          <div id="explore-buttons" class="flex place-content-evenly">
+            <button id="explore-common" class="btn btn-primary">Explore Common</button>
+            <button id="explore-rare" class="btn btn-secondary">Explore Rare</button>
+          </div>
+
+          <div class="flex flex-col items-center w-full gap-3">
+            <h3 class="font-bold text-accent border-b border-accent text-xl">Explored Planets</h3>
+            <div id="explored-planets" class="flex w-full">
+              <div class="grid grid-cols-2 w-full gap-y-3">
+                <span class="text-center text-lg">Resource</span>
+                <span class="text-center text-lg">Effect</span>
+                <div id="planet-list" class="col-span-2  grid grid-cols-2 w-full gap-y-3">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="rest-session" class="btn btn-info absolute left-0 bottom-0">Reset Session</button>
+    </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>
