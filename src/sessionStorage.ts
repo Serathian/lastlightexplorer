@@ -5,8 +5,7 @@ export function getOrCreateSession() {
 
     if (!storedData) {
         // Initialize
-        const newGUID = crypto.randomUUID().toString();
-        const sessionStore = { sessionId: newGUID, DiscoveredPlanets: [] } as SessionStore;
+        const sessionStore = { sessionId: "from-explorer", DiscoveredPlanets: [] } as SessionStore;
         sessionStorage.setItem("sessionStore", JSON.stringify(sessionStore));
         return sessionStore;
     } else {
@@ -19,7 +18,6 @@ export function updateSession(sessionStore: SessionStore) {
 }
 
 export function resetSession() {
-    const newGUID = crypto.randomUUID().toString();
-    const sessionStore = { sessionId: newGUID, DiscoveredPlanets: [] };
+    const sessionStore = { sessionId: "from-explorer", DiscoveredPlanets: [] };
     sessionStorage.setItem("sessionStore", JSON.stringify(sessionStore));
 }
