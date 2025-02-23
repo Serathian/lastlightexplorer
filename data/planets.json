@@ -1,0 +1,177 @@
+{
+    "common": [
+        {
+            "id": "c01",
+            "resource": "common",
+            "effect": "wormhole"
+        },
+        {
+            "id": "c02",
+            "resource": "common",
+            "effect": "rare" 
+        },
+        {
+            "id": "c03",
+            "resource": "common",
+            "effect": "pickup"
+        },
+        {
+            "id": "c04",
+            "resource": "uncommon",
+            "effect": "trade"
+        },
+        {
+            "id": "c05",
+            "resource":"common",
+            "effect": "extractor"
+        },
+        {
+            "id": "c06",
+            "resource": "common",
+            "effect": "research"
+        },
+        {
+            "id": "c07",
+            "resource":"common",
+            "effect": "light"
+        },
+        {
+            "id": "c08",
+            "resource":"uncommon",
+            "effect": "extractor"
+        },
+        {
+            "id": "c09",
+            "resource":"uncommon",
+            "effect": "tech"
+        },
+        {
+            "id": "c10",
+            "resource": "uncommon",
+            "effect": "pickup"
+        },
+        {
+            "id": "c11",
+            "resource": "uncommon",
+            "effect": "uncommon"
+        },
+        {
+            "id": "c12",
+            "resource": "common",
+            "effect": "uncommon"
+        },
+        {
+            "id": "c13",
+            "resource": "common",
+            "effect": "tech"
+        },
+        {
+            "id": "c14",
+            "resource": "uncommon",
+            "effect": "wormhole"
+        },
+        {
+            "id": "c15",
+            "resource": "uncommon",
+            "effect": "common"
+        },
+        {
+            "id": "c16",
+            "resource": "uncommon",
+            "effect": "ship"
+        },
+        {
+            "id": "c17",
+            "resource": "not-rare",
+            "effect": "none"
+        },
+        {
+            "id": "c18",
+            "resource": "common",
+            "effect": "ship"
+        },
+        {
+            "id": "c19",
+            "resource": "uncommon",
+            "effect": "none"
+        }
+    ],
+    "rare": [
+        {
+            "id": "r01",
+            "resource": "light",
+            "effect": "none"
+        },
+        {
+            "id": "r02",
+            "resource": "not-rare",
+            "effect": "none"
+        },
+        {
+            "id": "r03",
+            "resource": "rare",
+            "effect": "tech"
+        },
+        {
+            "id": "r04",
+            "resource": "light",
+            "effect": "tech"
+        },
+        {
+            "id": "r05",
+            "resource": "rare",
+            "effect": "common"
+        },
+        {
+            "id": "r06",
+            "resource": "not-rare",
+            "effect": "none"
+        },
+        {
+            "id": "r07",
+            "resource": "light",
+            "effect": "none"
+        },
+        {
+            "id": "r08",
+            "resource": "light",
+            "effect": "common"
+        },
+        {
+            "id": "r09",
+            "resource": "rare",
+            "effect": "trade"
+        },
+        {
+            "id": "r09",
+            "resource": "rare",
+            "effect": "none"
+        },
+        {
+            "id": "r10",
+            "resource": "rare",
+            "effect": "wormhole"
+        },
+        {
+            "id": "r11",
+            "resource": "rare",
+            "effect": "none"
+        },
+        {
+            "id": "r12",
+            "resource": "light",
+            "effect": "none"
+        },
+        {
+            "id": "r13",
+            "resource": "rare",
+            "effect": "none"
+        },
+        {
+            "id": "r14",
+            "resource": "light",
+            "effect": "wormhole"
+        }   
+    ]
+}
+
