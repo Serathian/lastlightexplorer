@@ -1,5 +1,10 @@
 [
     {
+        "id": "none",
+        "name": "Nothing",
+        "description": "This token has no effect."
+    },
+    {
         "id": "common",
         "name": "Gain Common Resource",
         "description": "Take 1 common resource."

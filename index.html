@@ -6,6 +6,7 @@
   <title>Planetary Explorer</title>
   <link rel="stylesheet" href="/style.css">
 </head>
+<body>
     <div id="app" class="container mx-auto" >
       <div class="flex flex-col items-center gap-5 max-w-96 my-8 mx-auto min-h-dvh">
         <div class="flex flex-col items-center gap-2">        
@@ -33,6 +34,17 @@
           </div>
         </div>
       </div>
+    <dialog id="planet-info-modal" class="modal">
+      <div class="modal-box">
+        <h3 id="modal-header" class="text-lg font-bold">Place Holder!</h3>
+        <p id="modal-desc" class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
       <button id="rest-session" class="btn btn-info absolute left-0 bottom-0">Reset Session</button>
     </div>
   <script type="module" src="/src/main.ts"></script>
