@@ -3,6 +3,12 @@ export interface PlanetData {
     rare: Planet[],
 }
 
+export interface Codex {
+    id: string,
+    name: string,
+    description: string,
+}
+
 export interface Planet {
     id: string,
     resource: string,
@@ -11,12 +17,12 @@ export interface Planet {
 
 export interface SessionStore {
     sessionId: string,
-    DiscoveredPlanets: DiscoveredPlanet[]
+    DiscoveredPlanets: DiscoveredPlanet[],
 }
 
 export interface DiscoveredPlanet {
     id: string,
     type: string,
     resource: string,
-    effect: string
+    effect: string,
 }
