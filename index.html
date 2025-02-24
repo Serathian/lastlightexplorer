@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="synthwave">
 <head>
+  <!-- Add Favicon-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planetary Explorer</title>
@@ -8,10 +9,17 @@
 </head>
 <body>
     <div id="app" class="container mx-auto" >
-      <div class="flex flex-col items-center gap-5 max-w-96 my-8 mx-auto min-h-dvh">
-        <div class="flex flex-col items-center gap-2">        
-          <h1 class="text-3xl text-primary font-bold">Last Light</h1>
-          <h2 class="font-bold">Planetary Explorer</h2>
+      <div id="header" class="flex place-content-between p-2 sticky top-0">
+          <a class="text-xs underline text-accent-content" target="_blank" href="https://github.com/Serathian/lastlightexplorer.git">
+            <img src="./src/asseets/github-mark-white.png" width="20px"/>
+          </a>
+
+        <button id="rest-session" class="btn btn-warning btn-sm">Reset Session</button>
+      </div>
+      <div class="flex flex-col items-center gap-5 max-w-96 my-8 mx-auto">
+        <div class="flex flex-col items-center -gap-2">        
+          <h1 class="text-3xl text-base-content font-bold">Last Light</h1>
+          <h2 class="font-bold text-base-300">Planetary Explorer</h2>
         </div>
 
         <div id="explore" class="flex flex-col gap-5 w-full">
@@ -21,11 +29,14 @@
           </div>
 
           <div class="flex flex-col items-center w-full gap-3">
-            <h3 class="font-bold text-accent border-b border-accent text-xl">Explored Planets</h3>
+            <h3 class="font-bold text-accent border-b-2 border-accent text-xl w-full text-center">Explored Planets</h3>
             <div id="explored-planets" class="flex w-full">
-              <div class="grid grid-cols-2 w-full gap-y-3">
-                <span class="text-center text-lg">Resource</span>
-                <span class="text-center text-lg">Effect</span>
+              <div class="flex flex-col justify-center w-full">
+                <div class="grid grid-cols-2 gap-y-3">
+                  <span class="text-center text-lg italic">Resource</span>
+                  <span class="text-center text-lg italic">Effect</span>
+                </div>
+
                 <div id="planet-list" class="col-span-2  grid grid-cols-2 w-full gap-y-3">
 
                 </div>
@@ -47,6 +58,7 @@
     </dialog>
       <button id="rest-session" class="btn btn-info absolute left-0 bottom-0">Reset Session</button>
     </div>
+      
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
