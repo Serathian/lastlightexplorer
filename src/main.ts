@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // -- HTML Elements
     const buttonCommon = document.getElementById('explore-common') as HTMLButtonElement;
     const buttonRare = document.getElementById('explore-rare') as HTMLButtonElement;
-    const buttonReset = document.getElementById('rest-session') as HTMLButtonElement
+    const buttonReset = document.getElementById('reset-session') as HTMLButtonElement
     const exploredPlanets = document.getElementById("planet-list") as HTMLDivElement;
     const infoModal = document.getElementById("planet-info-modal") as HTMLDialogElement;
 
@@ -51,11 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkForEndOfList() {
-        if(commonPlanets.length == 0) {
+        if (commonPlanets.length == 0) {
             buttonCommon.disabled = true
+        } else {
+            buttonCommon.disabled = false
         }
-        if(rarePlanets.length == 0) {
+        if (rarePlanets.length == 0) {
             buttonRare.disabled = true
+        } else {
+            buttonRare.disabled = false
         }
     }
 
