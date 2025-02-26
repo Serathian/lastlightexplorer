@@ -1,67 +1,67 @@
 [
-    {
-        "id": "none",
-        "name": "Nothing",
-        "description": "This token has no effect."
-    },
-    {
-        "id": "common",
-        "name": "Gain Common Resource",
-        "description": "Take 1 common resource."
-    },
-    {
-        "id": "uncommon",
-        "name": "Gain Uncommon Resource",
-        "description": " Take 1 uncommon resource."
-    },
-    {
-        "id": "rare",
-        "name": "Gain Rare Resource",
-        "description": " Take 1 rare resource."
-    },
-    {
-        "id": "not-rare",
-        "name": "Gain Common and Uncommon Resource",
-        "description": "Take both 1 common and 1 uncommon resource."
-    },
-    {
-        "id": "research",
-        "name": "Research Tech",
-        "description": "Research a tech without paying its cost."
-    },
-    {
-        "id": "tech",
-        "name": "Draw Tech",
-        "description": "Draw one tech card and put it in your hand."
-    },
-    {
-        "id": "extractor",
-        "name": "Build Extractor",
-        "description": "You may immediately build an extractor on this planet."
-    },
-    {
-        "id": "pickup",
-        "name": "Pickup Action Card",
-        "description": "You may pick up an action card other than the Refresh card."
-    },
-    {
-        "id": "wormhole",
-        "name": "Move Ship",
-        "description": "You may move one of your ships to this sector."
-    },
-    {
-        "id": "build",
-        "name": "Build A Ship",
-        "description": "Immediately build a small ship in this sector (if you have one unbuilt in your supply)."
-    },
-    {
-        "id": "trade",
-        "name": "Take a Trade Action",
-        "description": "You may take a trade action, making one trade only."
-    },
-    {
-        "id": "light",
-        "name": "Gain Light",
-        "description": "Gain a light."
-    }   
+  {
+    "id": "none",
+    "name": "Nothing",
+    "description": "This token has no effect."
+  },
+  {
+    "id": "common",
+    "name": "Gain Common Resource",
+    "description": "Take 1 common resource."
+  },
+  {
+    "id": "uncommon",
+    "name": "Gain Uncommon Resource",
+    "description": " Take 1 uncommon resource."
+  },
+  {
+    "id": "rare",
+    "name": "Gain Rare Resource",
+    "description": " Take 1 rare resource."
+  },
+  {
+    "id": "not-rare",
+    "name": "Gain Common and Uncommon Resource",
+    "description": "Take both 1 common and 1 uncommon resource."
+  },
+  {
+    "id": "research",
+    "name": "Research Tech",
+    "description": "Research a tech without paying its cost."
+  },
+  {
+    "id": "tech",
+    "name": "Draw Tech",
+    "description": "Draw one tech card and put it in your hand."
+  },
+  {
+    "id": "extractor",
+    "name": "Build Extractor",
+    "description": "You may immediately build an extractor on this planet."
+  },
+  {
+    "id": "pickup",
+    "name": "Pickup Action Card",
+    "description": "You may pick up an action card other than the Refresh card."
+  },
+  {
+    "id": "wormhole",
+    "name": "Move Ship",
+    "description": "You may move one of your ships to this sector."
+  },
+  {
+    "id": "build",
+    "name": "Build A Ship",
+    "description": "Immediately build a small ship in this sector (if you have one unbuilt in your supply)."
+  },
+  {
+    "id": "trade",
+    "name": "Take a Trade Action",
+    "description": "You may take a trade action, making one trade only."
+  },
+  {
+    "id": "light",
+    "name": "Gain Light",
+    "description": "Gain a light."
+  }
 ]
