@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function explorePlanet(type: string, possiblePlanets: Planet[]) {
     explore(type, possiblePlanets, sessionStore)
     updatePlanetLists()
-    checkForEndOfList()
+    setButtonState()
     renderState()
     updateSession(sessionStore)
   }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function checkForEndOfList() {
+  function setButtonState() {
     if (commonPlanets.length == 0) {
       buttonCommon.disabled = true
     } else {
@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function reset() {
     resetSession()
     sessionStore = getOrCreateSession()
+    updatePlanetLists()
+    setButtonState()
     renderState()
   }
 
