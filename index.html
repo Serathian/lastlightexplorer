@@ -1,45 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="synthwave">
-<head>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planetary Explorer</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <div id="app" class="container mx-auto" >
+  <head>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planetary Explorer</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="app" class="container mx-auto">
       <!-- Sticky Header -->
       <div id="header" class="flex place-content-between p-2 sticky top-0">
         <div class="flex gap-3">
-          <a target="_blank" href="https://github.com/Serathian/lastlightexplorer.git">
-            <img src="./src/assets/github-mark-white.png" width="20px"/>
+          <a
+            target="_blank"
+            href="https://github.com/Serathian/lastlightexplorer.git"
+          >
+            <img src="./src/assets/github-mark-white.png" width="20px" />
           </a>
           <div onclick="app_info_modal.showModal()">
-            <img src="./src/assets/info.svg" width="23px"/>
+            <img src="./src/assets/info.svg" width="23px" />
           </div>
         </div>
-        <button id="reset-session" class="btn btn-warning btn-sm">Reset Session</button>
+        <button id="reset-session" class="btn btn-warning btn-sm">
+          Reset Session
+        </button>
       </div>
       <div class="flex flex-col items-center gap-5 max-w-96 my-8 mx-auto">
-        <div class="flex flex-col items-center -gap-2">        
+        <div class="flex flex-col items-center -gap-2">
           <h1 class="text-3xl text-base-content font-bold">Last Light</h1>
           <h2 class="font-bold text-base-300">Planetary Explorer</h2>
         </div>
 
         <div id="explore" class="flex flex-col gap-5 w-full">
           <div id="explore-buttons" class="flex place-content-evenly">
-            <button id="explore-common" class="btn btn-primary">Explore Common</button>
-            <button id="explore-rare" class="btn btn-secondary">Explore Rare</button>
+            <button id="explore-common" class="btn btn-primary">
+              Explore Common
+            </button>
+            <button id="explore-rare" class="btn btn-secondary">
+              Explore Rare
+            </button>
           </div>
 
           <div class="flex flex-col items-center w-full gap-3">
-            <div class="flex flex-col items-center  w-full ">
-              <h3 class="font-bold text-accent text-xl border-b-2 border-accent text-center w-full">Explored Planets</h3>
-            <span class="italic text-xs">(Click the name for more info.)</span>
-
+            <div class="flex flex-col items-center w-full">
+              <h3
+                class="font-bold text-accent text-xl border-b-2 border-accent text-center w-full"
+              >
+                Explored Planets
+              </h3>
+              <span class="italic text-xs"
+                >(Click the name for more info.)</span
+              >
             </div>
-
 
             <div id="explored-planets" class="flex w-full">
               <div class="flex flex-col justify-center w-full">
@@ -47,7 +60,10 @@
                   <span class="text-center text-lg italic">Resource</span>
                   <span class="text-center text-lg italic">Effect</span>
                 </div>
-                <div id="planet-list" class="col-span-2  grid grid-cols-2 w-full gap-y-3">
+                <div
+                  id="planet-list"
+                  class="col-span-2 grid grid-cols-2 w-full gap-y-3"
+                >
                   <!-- Dynamically populated -->
                 </div>
               </div>
@@ -55,37 +71,42 @@
           </div>
         </div>
       </div>
-    <!-- Modals -->
+      <!-- Modals -->
       <!-- Planet Info-->
-    <dialog id="planet-info-modal" class="modal">
-      <div class="modal-box">
-        <h3 id="modal-header" class="text-lg font-bold">Place Holder!</h3>
-        <p id="modal-desc" class="py-4">Press ESC key or click the button below to close</p>
-        <div class="modal-action">
-          <form method="dialog">
-            <button class="btn">Close</button>
-          </form>
+      <dialog id="planet-info-modal" class="modal">
+        <div class="modal-box">
+          <h3 id="modal-header" class="text-lg font-bold">Place Holder!</h3>
+          <p id="modal-desc" class="py-4">
+            Press ESC key or click the button below to close
+          </p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </dialog>
+      </dialog>
       <!-- App Info -->
-    <dialog id="app_info_modal" class="modal">
-      <div class="modal-box">
-        <h3 id="modal-header" class="text-lg font-bold">Last Light</h3>
-        <h4 class="text-md font-bold">Planetay Explorer</h4>
-        <p id="modal-desc" class="py-4">
-          This simple web app facilitates the exploration of Last Light planets without the need to handle the small tokens included in the retail version.
-          This application was desgined to work with 3d printed components where the display of planet resources is communicated by attaching the resource to the planet-ring.
-        </p>
-        <div class="modal-action">
-          <form method="dialog">
-            <button class="btn">Close</button>
-          </form>
+      <dialog id="app_info_modal" class="modal">
+        <div class="modal-box">
+          <h3 id="modal-header" class="text-lg font-bold">Last Light</h3>
+          <h4 class="text-md font-bold">Planetay Explorer</h4>
+          <p id="modal-desc" class="py-4">
+            This simple web app facilitates the exploration of Last Light
+            planets without the need to handle the small tokens included in the
+            retail version. This application was desgined to work with 3d
+            printed components where the display of planet resources is
+            communicated by attaching the resource to the planet-ring.
+          </p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </dialog>
+      </dialog>
     </div>
-      
-  <script type="module" src="/src/main.ts"></script>
-</body>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
