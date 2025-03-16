@@ -21,7 +21,7 @@
   },
   {
     "id": "not-rare",
-    "name": "Gain Common and Uncommon Resource",
+    "name": "Gain Common And Uncommon Resource",
     "description": "Take both 1 common and 1 uncommon resource."
   },
   {
@@ -56,12 +56,17 @@
   },
   {
     "id": "trade",
-    "name": "Take a Trade Action",
+    "name": "Take A Trade Action",
     "description": "You may take a trade action, making one trade only."
   },
   {
     "id": "light",
     "name": "Gain Light",
     "description": "Gain a light."
+  },
+    {
+    "id": "ship",
+    "name": "Gain A Small Ship",
+    "description": "Place one small ship where this token was uncovered."
   }
 ]
