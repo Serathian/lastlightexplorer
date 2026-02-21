@@ -9,6 +9,7 @@ import {
   resetSession,
   updateSession,
 } from './sessionStorage'
+
 document.addEventListener('DOMContentLoaded', () => {
   // -- Data
   const planets: PlanetData = planetData
@@ -58,14 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderState()
 
   // -- Function
-  function explorePlanet(type: string, possiblePlanets: Planet[]) {
-    explore(type, possiblePlanets, sessionStore)
-    updatePlanetLists()
-    setButtonState()
-    renderState()
-    updateSession(sessionStore)
-  }
-
   function updatePlanetLists() {
     if (sessionStore.DiscoveredPlanets.length == 0) {
       // Load base game
@@ -106,7 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function reset() {
+  function getPlanetColour(type: string) {
+    if (type == 'common') {
+      return 'text-primary'
+    }
+    return 'text-secondary'
+  }
+
+  // -- Handlers
+  function handleExplorePlanetClick(type: string, possiblePlanets: Planet[]) {
+    explore(type, possiblePlanets, sessionStore)
+    updatePlanetLists()
+    setButtonState()
+    renderState()
+    updateSession(sessionStore)
+  }
+
+  function handleResetClick() {
     resetSession()
     sessionStore = getOrCreateSession()
     updatePlanetLists()
@@ -119,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     infoModal.showModal()
   }
 
-  function toggleExpansion() {
+  function handleToggleExpansionClick() {
     if (sessionStore.DiscoveredPlanets.length) {
       warningModal.showModal()
     } else {
@@ -155,12 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // -- Listners
   buttonCommon.addEventListener('click', () =>
-    explorePlanet('common', commonPlanets)
+    handleExplorePlanetClick('common', commonPlanets)
   )
-  buttonRare.addEventListener('click', () => explorePlanet('rare', rarePlanets))
-  buttonReset.addEventListener('click', reset)
+  buttonRare.addEventListener('click', () =>
+    handleExplorePlanetClick('rare', rarePlanets)
+  )
+  buttonReset.addEventListener('click', handleResetClick)
   exploredPlanets.addEventListener('click', handlePlanetClick)
-  buttonExpansion.addEventListener('click', toggleExpansion)
+  buttonExpansion.addEventListener('click', handleToggleExpansionClick)
   expansionAccept.addEventListener('click', handleExpansionAccept)
   expansionReject.addEventListener('click', handleExpansionReject)
 
@@ -192,12 +203,5 @@ document.addEventListener('DOMContentLoaded', () => {
       effectContent.classList.add('clickable')
       exploredPlanets.appendChild(effectContent)
     })
-  }
-
-  function getPlanetColour(type: string) {
-    if (type == 'common') {
-      return 'text-primary'
-    }
-    return 'text-secondary'
   }
 })
