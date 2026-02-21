@@ -94,6 +94,18 @@
       "id": "c19",
       "resource": "uncommon",
       "effect": "none"
+    },
+    {
+      "id": "c20",
+      "resource": "exotic",
+      "effect": "none",
+      "expansion": true
+    },
+    {
+      "id": "c21",
+      "resource": "exotic",
+      "effect": "none",
+      "expansion": true
     }
   ],
   "rare": [
@@ -171,6 +183,18 @@
       "id": "r14",
       "resource": "light",
       "effect": "wormhole"
+    },
+    {
+      "id": "r15",
+      "resource": "exotic",
+      "effect": "none",
+      "expansion": true
+    },
+    {
+      "id": "r16",
+      "resource": "exotic",
+      "effect": "none",
+      "expansion": true
     }
   ]
 }

@@ -8,6 +8,7 @@ export function getOrCreateSession() {
     const sessionStore = {
       sessionId: 'from-explorer',
       DiscoveredPlanets: [],
+      useExpansion: false,
     } as SessionStore
     sessionStorage.setItem('sessionStore', JSON.stringify(sessionStore))
     return sessionStore

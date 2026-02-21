@@ -32,6 +32,24 @@
           <h2 class="font-bold text-base-300">Planetary Explorer</h2>
         </div>
 
+        <button
+          id="toggle-expansion"
+          class="flex items-center cursor-pointer mx-auto"
+        >
+          <input
+            type="checkbox"
+            id="expansion-state"
+            value=""
+            class="sr-only peer hidden"
+          />
+          <div
+            class="relative w-9 h-5 bg-accent-content peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-accent"
+          ></div>
+          <span class="select-none ms-3 text-sm font-medium text-heading"
+            >Use Expansion</span
+          >
+        </button>
+
         <div id="explore" class="flex flex-col gap-5 w-full">
           <div id="explore-buttons" class="flex place-content-evenly">
             <button id="explore-common" class="btn btn-primary">
@@ -102,6 +120,29 @@
             <form method="dialog">
               <button class="btn">Close</button>
             </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Warning  -->
+      <dialog id="app_warning_modal" class="modal">
+        <div class="modal-box">
+          <h3 id="modal-header" class="text-lg font-bold">WARNING!</h3>
+          <h4 class="text-md font-bold">This action has a side effect!</h4>
+          <p id="modal-desc" class="py-4">
+            Looks like you are in the middle of the game. Changing the expansion
+            settings is not recommending while playing, It is recommeneded to
+            restart the session first.
+          </p>
+          <div class="modal-action">
+            <button
+              id="btn-expansion-revert"
+              class="btn bg-accent-content text-white"
+            >
+              Revert
+            </button>
+            <button id="btn-expansion-accept" class="btn bg-accent text-white">
+              Accept
+            </button>
           </div>
         </div>
       </dialog>

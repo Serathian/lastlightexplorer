@@ -64,9 +64,14 @@
     "name": "Gain Light",
     "description": "Gain a light."
   },
-    {
+  {
     "id": "ship",
     "name": "Gain A Small Ship",
     "description": "Place one small ship where this token was uncovered."
+  },
+  {
+    "id": "exotic",
+    "name": "Roll For Exotic Matter Planet",
+    "description": "When you discover an exotic matter planetary (and every time you mine an exotic matter planet) immediately roll 1 combat die and collect the resource corresponding to your roll."
   }
 ]
