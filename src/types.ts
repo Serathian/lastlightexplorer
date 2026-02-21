@@ -13,11 +13,13 @@ export interface Planet {
   id: string
   resource: string
   effect: string
+  expansion?: boolean
 }
 
 export interface SessionStore {
   sessionId: string
   DiscoveredPlanets: DiscoveredPlanet[]
+  useExpansion: boolean
 }
 
 export interface DiscoveredPlanet {

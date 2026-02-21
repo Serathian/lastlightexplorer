@@ -37,6 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoModal = document.getElementById(
     'planet-info-modal'
   ) as HTMLDialogElement
+  const buttonExpansion = document.getElementById(
+    'toggle-expansion'
+  ) as HTMLInputElement
+  const inputExpansion = document.getElementById(
+    'expansion-state'
+  ) as HTMLInputElement
+  const warningModal = document.getElementById(
+    'app_warning_modal'
+  ) as HTMLDialogElement
+  const expansionAccept = document.getElementById(
+    'btn-expansion-accept'
+  ) as HTMLButtonElement
+  const expansionReject = document.getElementById(
+    'btn-expansion-revert'
+  ) as HTMLButtonElement
 
   // -- Init
   updatePlanetLists()
@@ -53,8 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updatePlanetLists() {
     if (sessionStore.DiscoveredPlanets.length == 0) {
-      commonPlanets = planets.common
-      rarePlanets = planets.rare
+      // Load base game
+      commonPlanets = planets.common.filter((x) => x.expansion == undefined)
+      rarePlanets = planets.rare.filter((x) => x.expansion == undefined)
+
+      // Load all inc expansion
+      if (sessionStore.useExpansion) {
+        commonPlanets = planets.common
+        rarePlanets = planets.rare
+      }
     } else {
       commonPlanets = planets.common.filter(
         (planet) =>
@@ -97,13 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
     infoModal.showModal()
   }
 
-  // -- Listners
-  buttonCommon.addEventListener('click', () =>
-    explorePlanet('common', commonPlanets)
-  )
-  buttonRare.addEventListener('click', () => explorePlanet('rare', rarePlanets))
-  buttonReset.addEventListener('click', () => reset())
-  exploredPlanets.addEventListener('click', function (event: Event) {
+  function toggleExpansion() {
+    if (sessionStore.DiscoveredPlanets.length) {
+      warningModal.showModal()
+    } else {
+      sessionStore.useExpansion = !sessionStore.useExpansion
+      updateSession(sessionStore)
+      renderState()
+    }
+  }
+
+  function handlePlanetClick(event: Event) {
     const target = event.target as HTMLElement
 
     if (
@@ -113,10 +139,35 @@ document.addEventListener('DOMContentLoaded', () => {
     ) {
       handleExploreTooltip(target.id)
     }
-  })
+  }
+
+  function handleExpansionAccept() {
+    sessionStore.useExpansion = !sessionStore.useExpansion
+    updateSession(sessionStore)
+    renderState()
+
+    warningModal.close()
+  }
+
+  function handleExpansionReject() {
+    warningModal.close()
+  }
+
+  // -- Listners
+  buttonCommon.addEventListener('click', () =>
+    explorePlanet('common', commonPlanets)
+  )
+  buttonRare.addEventListener('click', () => explorePlanet('rare', rarePlanets))
+  buttonReset.addEventListener('click', reset)
+  exploredPlanets.addEventListener('click', handlePlanetClick)
+  buttonExpansion.addEventListener('click', toggleExpansion)
+  expansionAccept.addEventListener('click', handleExpansionAccept)
+  expansionReject.addEventListener('click', handleExpansionReject)
 
   // -- Renderer
   function renderState() {
+    inputExpansion.checked = sessionStore.useExpansion
+
     exploredPlanets.innerHTML = ''
 
     sessionStore.DiscoveredPlanets.forEach((planet) => {
