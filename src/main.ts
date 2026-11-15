@@ -4,6 +4,7 @@ import dictionaryData from '../data/dictionary.json'
 import { Planet, PlanetData, Codex } from './types'
 import { explore } from './exploration'
 import { populateExploreModal } from './modal'
+import { getAvailablePlanetPools } from './randomizer'
 import {
   getOrCreateSession,
   resetSession,
@@ -60,30 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // -- Function
   function updatePlanetLists() {
-    if (sessionStore.DiscoveredPlanets.length == 0) {
-      // Load base game
-      commonPlanets = planets.common.filter((x) => x.expansion == undefined)
-      rarePlanets = planets.rare.filter((x) => x.expansion == undefined)
-
-      // Load all inc expansion
-      if (sessionStore.useExpansion) {
-        commonPlanets = planets.common
-        rarePlanets = planets.rare
-      }
-    } else {
-      commonPlanets = planets.common.filter(
-        (planet) =>
-          !sessionStore.DiscoveredPlanets.some(
-            (discovered) => discovered.id === planet.id
-          )
-      )
-      rarePlanets = planets.rare.filter(
-        (planet) =>
-          !sessionStore.DiscoveredPlanets.some(
-            (discovered) => discovered.id === planet.id
-          )
-      )
-    }
+    const pools = getAvailablePlanetPools(planets, sessionStore)
+    commonPlanets = pools.common
+    rarePlanets = pools.rare
   }
 
   function setButtonState() {
